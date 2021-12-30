@@ -1,0 +1,35 @@
+{
+  "name": "kaist-ua-image-server",
+  "version": "1.0.0",
+  "description": "KAIST UA Web Image Server App",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uklee/kaist-ua-image-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uklee/kaist-ua-image-server/issues"
+  },
+  "homepage": "https://github.com/uklee/kaist-ua-image-server#readme",
+  "dependencies": {
+    "@koa/multer": "^3.0.0",
+    "dotenv": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "koa": "^2.13.4",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0"
+  }
+}
