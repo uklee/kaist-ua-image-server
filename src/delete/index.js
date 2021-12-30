@@ -9,15 +9,28 @@ const router = new Router();
 
 
 
-router.delete('/:img', admin.check, async (ctx) => {
+router.delete('/:img', admin.check, (ctx) => {
+    
+    try {
 
-    await fs.unlink(path.join(imgpath, ctx.params.img), (err) => {err ?
-        () => {console.log('Image Deletion Fail!!'); console.log(`Request Image: ${ctx.params.img}`); console.log(err); ctx.assert(true, 404);}
-        :
-        () => {ctx.body = { ok: true, msg: 'Image Successfully Deleted.' }; console.log("--response set--")}
-    });
+        fs.unlinkSync(path.join(imgpath, ctx.params.img));
+        
+        ctx.body = { ok: true, msg: 'Image Successfully Deleted.' };
 
-    console.log('-- Image Deletion END --')
+    } catch (err) {
+
+        console.log('Image Deletion Fail!!');
+        console.log(`Request Image: ${ctx.params.img}`);
+        console.log('-- Error Detail --');
+        console.log(err);
+        console.log('------------------');
+
+        ctx.status = 404;
+        
+    };
+    
+
+    console.log('== Image Deletion END ==')
     console.log();
 
 });

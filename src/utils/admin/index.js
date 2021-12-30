@@ -18,7 +18,7 @@ exports.check = (ctx, next) => {
         console.log('Administrator Validation Fail!!');
         console.log(`Given admin-key: ${ctx.request.header.key}`);
 
-        console.log('-- Request Terminated by Adminitrator Validation --');
+        console.log('== Request Terminated by Adminitrator Validation ==');
         console.log();
 
         ctx.throw(403);

@@ -35,7 +35,7 @@ const upload = multer({ storage: storage });
 
 
 
-router.post('/', admin.check, upload.single('image'), async (ctx, next) => {
+router.post('/', admin.check, upload.single('image'), (ctx, next) => {
 
     const { fieldname, originalname, encoding, mimetype, destination, filename, path, size } = ctx.request.file
 
@@ -51,7 +51,7 @@ router.post('/', admin.check, upload.single('image'), async (ctx, next) => {
 
     ctx.body = {ok: true, msg: 'Image Successfully Uploaded.', path: `/view/${filename}`};
 
-    console.log('-- Image Upload END --')
+    console.log('== Image Upload END ==')
     console.log();
 
 });
