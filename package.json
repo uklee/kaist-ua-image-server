@@ -21,7 +21,7 @@
   "dependencies": {
     "@koa/multer": "^3.0.0",
     "dotenv": "^10.0.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.6.0",
     "koa": "^2.13.4",
     "koa-mount": "^4.0.0",
     "koa-router": "^10.1.1",
